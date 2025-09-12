@@ -1,0 +1,32 @@
+name: Release G-Man Homebrew tap
+on: [push]
+jobs:
+  test:
+    strategy:
+      matrix:
+        runs-on: ['macOS-latest', 'ubuntu-latest']
+
+    runs-on: ${{ matrix.runs-on }}
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build and release Linux G-Man Tap
+        if: matrix.runs-on == 'ubuntu-latest'
+        shell: bash
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/runner/.bash_profile
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew tap dark-alex-17/gman $(pwd)
+          brew install --build-bottle --verbose gman
+          gman -h
+      - name: Build and release MacOS G-Man Tap
+        if: matrix.runs-on == 'macOS-latest'
+        shell: bash
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> /Users/runner/.bash_profile
+          eval "$(/usr/local/bin/brew shellenv)"
+          brew tap dark-alex-17/gman $(pwd)
+          brew install --build-bottle --verbose gman
+          gman -h
