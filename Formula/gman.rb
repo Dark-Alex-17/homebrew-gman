@@ -5,13 +5,13 @@ class Gman < Formula
   homepage "https://github.com/Dark-Alex-17/gman"
   if OS.mac? and Hardware::CPU.arm?
     url "https://github.com/Dark-Alex-17/gman/releases/download/v0.1.0/gman-aarch64-apple-darwin.tar.gz"
-    sha256 "17598ad6763027a0137aaafbcc22dbd9ea11575bfe1d82040264c804842dd7a4"
+    sha256 "90253ba2f4d20790218ed435c96fd34dd953996f7bba16e95af7b1ce78eda4a4"
   elsif OS.mac? and Hardware::CPU.intel?
     url "https://github.com/Dark-Alex-17/gman/releases/download/v0.1.0/gman-x86_64-apple-darwin.tar.gz"
-    sha256 "512a7199487f0d2953448f2d7ba387cc00703104dcba217484304f9d5e8be70f"
+    sha256 "2e979e2e2fefeb430dd8c6ad58b8fbcf94ea859657f8c28e608a81c222139c6c"
   else
     url "https://github.com/Dark-Alex-17/gman/releases/download/v0.1.0/gman-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "59552c6de8325b1a4c3bdd2a6e38482e375965eea5b28a28badc1ced79f7622a"
+    sha256 "c66b8b70818d1b11fd0ba7bf609c71b8b35c7e15ee9c2db127e75633aa877a87"
   end
   version "0.1.0"
   license "MIT"
