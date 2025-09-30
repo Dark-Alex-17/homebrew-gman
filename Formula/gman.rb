@@ -4,16 +4,16 @@ class Gman < Formula
   desc "Universal command line credential management and injection tool"
   homepage "https://github.com/Dark-Alex-17/gman"
   if OS.mac? and Hardware::CPU.arm?
-    url "https://github.com/Dark-Alex-17/gman/releases/download/v0.2.1/gman-aarch64-apple-darwin.tar.gz"
-    sha256 "a789039328bd69d23e7b93fe62f82739044339d0d615b45e3a46755f27b6b51f"
+    url "https://github.com/Dark-Alex-17/gman/releases/download/v0.2.2/gman-aarch64-apple-darwin.tar.gz"
+    sha256 "04b81a257cc8a882e6ae1ce7cc253ac4179fa8eaa221d2a1009b78676741d221"
   elsif OS.mac? and Hardware::CPU.intel?
-    url "https://github.com/Dark-Alex-17/gman/releases/download/v0.2.1/gman-x86_64-apple-darwin.tar.gz"
-    sha256 "d82d8b582486355a8f8333a5673214f6e4cee8e35d9ae2ea378850f92bc8a502"
+    url "https://github.com/Dark-Alex-17/gman/releases/download/v0.2.2/gman-x86_64-apple-darwin.tar.gz"
+    sha256 "7a7db03839a560dc40eff23f7e6cc6dd8bd9d4e45b33c52da380e7c95b63e860"
   else
-    url "https://github.com/Dark-Alex-17/gman/releases/download/v0.2.1/gman-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "b134206d15c5b82cd726797e58280935d3058e1e6e609952adc205bce882c985"
+    url "https://github.com/Dark-Alex-17/gman/releases/download/v0.2.2/gman-x86_64-unknown-linux-musl.tar.gz"
+    sha256 "b7165a7e552cbeb37b882f741426347fe511f6785ed08f76913bb85f7cd598bc"
   end
-  version "0.2.1"
+  version "0.2.2"
   license "MIT"
 
   def install
